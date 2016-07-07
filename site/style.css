@@ -1,0 +1,78 @@
+/* This css file is included by being imported in index.js */
+
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+}
+
+h1 {
+    font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 20px;
+}
+.write-up{
+	width:700px;
+	margin: 0 auto;
+}
+.content {
+   	height:350px;
+    margin: auto;
+}
+.fx-table{
+	font-size: 12px;
+	width:100%;
+}
+.fx-table thead tr td{
+	font-weight: bold;
+	color: #5c729c;
+	font-size: 24px;
+
+}
+
+.fx-table tr{
+}
+.fx-table tr td{
+	font-weight: normal;
+	padding:4px;
+	color: #5c729c;
+	font-size: 12px;
+	
+}
+
+.fx-table tr td:hover{
+	background: #fff;
+}
+.fx-table{
+	background: #d4dae6;
+	border-radius:5px;
+}
+
+.changed{
+	-webkit-animation: change-color .2s ease-in; /* Safari 4+ */
+	-moz-animation:    change-color .2s ease-in; /* Fx 5+ */
+	-o-animation:      change-color .2s ease-in; /* Opera 12+ */
+	animation:         change-color .2s ease-in; /* IE 10+ */
+}
+
+@-webkit-keyframes change-color {
+  0%   { background-color: #fff; }
+  100% { background-color: transparent; }
+}
+@-moz-keyframes change-color {
+  0%   { background-color: #fff; }
+  100% { background-color: transparent; }
+}
+@-o-keyframes change-color {
+  0%   { background-color: #fff; }
+  100% { background-color: transparent; }
+}
+@keyframes change-color {
+  0%   { background-color: #fff; }
+  100% { background-color: transparent; }
+}
+
+.usdjpy{
+
+}

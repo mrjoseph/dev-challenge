@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+         <script src="stomp.js"></script>
+    </head>
+    <body>
+    <section class="content">
+
+    </section>
+    <section class="write-up">
+            <h2>Approach</h2>
+
+        <p>    I decided to separate the table creation code from the callback function and use a small events function that subscribes to data changes coming from the stomp server
+
+            On page load the first published data triggers the creation of the table and it's child elements</p>
+
+        <code>    function init(){ <br>
+                    &nbsp; events.subscribe('fxData',(data) => { <br>
+                    &nbsp;&nbsp;&nbsp;createTableHeader(data)<br>
+                    &nbsp;&nbsp;&nbsp;createTableRows(data)<br>
+                    &nbsp;});<br>
+                        <br>
+                    &nbsp;//Create table and child elements <br>
+                    &nbsp;&nbsp;createAndAppendElement('table','fx-table','.content');<br>
+                    &nbsp;&nbsp;createAndAppendElement('thead','table-head','.fx-table');<br>
+                    &nbsp;&nbsp;createAndAppendElement('tbody','table-body','.fx-table');<br>
+                    
+                };<br>
+
+                </code>
+            <p>The table of FX data slowly populates with each publish of the stomp server. If a currency pair already exists in the table we simply update that particular row. If it doesn't exist we add a new row.</p>
+
+            <h2>Order by lastChangeBid</h2>
+            <code>findAndMoveRowElement(result,tableBody)</code>
+            <p>
+                To keep the table ordered by 'lastChangeBid' I decided it was best to keep a track of this data and only append a row to the top of the table if the incoming data from stomp matches any current lastChangeBid value.
+                To make this visible I've added a class which hi lights the new row.</p>
+
+            <h2>Libraries & Frameworks</h2>
+
+            <p>It's been a while since I've used a framework. In my current role we made a decision to not lock ourselves into a front end framework. If I was going to choose one I think I'd explore React.js. It's becoming very popular since it's release and I haven't has the opportunity to play with it. I may redo this test in react.</p>
+             
+            <p>Trevor Joseph <br>
+                <a href="mailto:mr.trevorjoseph@gmail.com">mr.trevorjoseph@gmail.com</a> <br>
+                07841465186</p>
+    </section>
+
+        <script src="bundle.js"></script>
+
+
+    </body>
+</html>
